@@ -28,7 +28,7 @@
 		<script type="module">
 
 			import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.144.0/three.module.js';
-			//import { ARButton } from './jsm/webxr/ARButton.js';
+			import { ARButton } from './jsm/webxr/ARButton.js';
 
 			let container;
 			let camera, scene, renderer;
@@ -65,8 +65,8 @@
 
 				//
 
-				//document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
-				requiredFeatures: [ 'hit-test' ];
+				document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
+				
 				//
 
 				const geometry = new THREE.CylinderGeometry( 0.1, 0.1, 0.2, 32 ).translate( 0, 0.1, 0 );

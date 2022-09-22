@@ -81,7 +81,7 @@
 					function(gltf){
 						dinaso = gltf.scene;
 						dinaso.scale.set(0.07,0.07,0.07);
-						scene.add(gltf.scene);
+						//scene.add(gltf.scene);
 					}
 				)
 
@@ -93,14 +93,12 @@
 						const mesh = new THREE.Mesh( geometry, material );
 						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
 						mesh.scale.y = Math.random() * 2 + 1;
-						//scene.add( mesh );
+						scene.add( mesh );
 
-						if (dinaso) {
-  							const clone = dinaso.clone();
-							reticle.matrix.decompose( dinaso.position, dinaso.quaternion, dinaso.scale );
-							scene.add(clone);
-							console.log(clone);
-						}
+  						const clone = dinaso.clone();
+						reticle.matrix.decompose( dinaso.position, dinaso.quaternion, dinaso.scale );
+						scene.add(clone);
+						console.log(clone);
 					}
 				}
 

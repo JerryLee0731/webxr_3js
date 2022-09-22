@@ -93,12 +93,11 @@
 						const mesh = new THREE.Mesh( geometry, material );
 						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
 						mesh.scale.y = Math.random() * 2 + 1;
-						scene.add( mesh );
+						//scene.add( mesh );
 
 						if (dinaso) {
   							const clone = dinaso.clone();
-							reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
- 							//clone.position.copy(mesh.position);
+							reticle.matrix.decompose( dinaso.position, dinaso.quaternion, dinaso.scale );
 							scene.add(clone);
 						}
 					}

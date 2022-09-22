@@ -93,9 +93,12 @@
 						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
-						scene.add( dinaso );
 
-					}
+						if (dinaso) {
+  							const clone = dinaso.clone();
+ 							clone.position.copy(reticle.position);
+							scene.add(clone);
+						}
 
 				}
 				

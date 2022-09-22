@@ -97,6 +97,7 @@
 
 						if (dinaso) {
   							const clone = dinaso.clone();
+							reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
  							//clone.position.copy(mesh.position);
 							scene.add(clone);
 						}

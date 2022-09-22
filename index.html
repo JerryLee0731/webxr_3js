@@ -77,7 +77,11 @@
 				//load a gltf model dinaso
 				const loader = new GLTFLoader();
 				loader.load("https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf",
-					function(gltfScene){scene.add(gltfScene.scene);}
+					function(gltf){
+						const dinaso = gltf.scene;
+						dinaso.scale.set(0.1,0.1,0.1);
+						//scene.add(gltf.scene);
+					}
 				)
 
 				function onSelect() {
@@ -89,6 +93,7 @@
 						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
+						scene.add( dinaso );
 
 					}
 

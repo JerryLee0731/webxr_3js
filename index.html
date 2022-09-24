@@ -123,8 +123,8 @@
 
 						const clone2 = tm500.clone();
 						reticle.matrix.decompose( clone2.position, clone2.quaternion, clone2.scale );
-						clone2.rotation.x = 90/180*Math.PI;
-						clone2.scale.set(5,5,5);
+						clone2.rotation.x = 270/180*Math.PI;
+						clone2.scale.set(1,1,1);
 						scene.add(clone2);
 						console.log(clone2);
 					}

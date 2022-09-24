@@ -77,7 +77,7 @@
 				
 				//
 
-				const geometry = new THREE.CylinderGeometry( 0.1, 0.1, 0.2, 32 ).translate( 0, 0.1, 0 );
+				//const geometry = new THREE.CylinderGeometry( 0.1, 0.1, 0.2, 32 ).translate( 0, 0.1, 0 );
 				
 				//load a gltf model dinaso
 				// const loader = new GLTFLoader();
@@ -101,7 +101,7 @@
 						loader2.load("./assets/TM5_900.obj",
 							function(object){
 								tm500=object;
-								tm500.rotation.y = 90/180*Math.PI;
+								tm500.rotation.x = 90/180*Math.PI;
 								tm500.scale.set(1.5,1.5,1.5);
 							}
 						)
@@ -112,11 +112,11 @@
 
 					if ( reticle.visible ) {
 
-						const material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
-						const mesh = new THREE.Mesh( geometry, material );
-						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
-						mesh.scale.y = Math.random() * 2 + 1;
-						scene.add( mesh );
+						// const material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
+						// const mesh = new THREE.Mesh( geometry, material );
+						// reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
+						// mesh.scale.y = Math.random() * 2 + 1;
+						// scene.add( mesh );
 
   						// const clone = dinaso.clone();
 						// reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );

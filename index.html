@@ -30,8 +30,9 @@
 			import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/0.144.0/three.module.js';
 			import { ARButton } from './jsm/webxr/ARButton.js';
 
-			//import gltfloader
-			import {GLTFLoader} from './jsm/loaders/GLTFLoader.js'
+			// //import gltfloader
+			// import {GLTFLoader} from './jsm/loaders/GLTFLoader.js'
+			
 			//import objloader
 			import {OBJLoader} from './jsm/loaders/OBJLoader.js'
 			//import mtlloader
@@ -79,15 +80,15 @@
 				const geometry = new THREE.CylinderGeometry( 0.1, 0.1, 0.2, 32 ).translate( 0, 0.1, 0 );
 				
 				//load a gltf model dinaso
-				const loader = new GLTFLoader();
-				var dinaso;
-				loader.load("https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf",
-					function(gltf){
-						dinaso = gltf.scene;
-						//dinaso.scale.set(0.01,0.01,0.01);
-						//scene.add(gltf.scene);
-					}
-				)
+				// const loader = new GLTFLoader();
+				// var dinaso;
+				// loader.load("https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf",
+				// 	function(gltf){
+				// 		dinaso = gltf.scene;
+				// 		//dinaso.scale.set(0.01,0.01,0.01);
+				// 		//scene.add(gltf.scene);
+				// 	}
+				// )
 
 				//load tm500 obj and mtl file
 				const loader2 = new OBJLoader();
@@ -115,13 +116,13 @@
 						mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
 
-  						const clone = dinaso.clone();
-						reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );
-						scene.add(clone);
-						console.log(clone);
+  						// const clone = dinaso.clone();
+						// reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );
+						// scene.add(clone);
+						// console.log(clone);
 
 						const clone2 = tm500.clone();
-						reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );
+						reticle.matrix.decompose( clone2.position, clone2.quaternion, clone2.scale );
 						scene.add(clone2);
 						console.log(clone2);
 					}

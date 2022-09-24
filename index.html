@@ -101,6 +101,8 @@
 						loader2.load("./assets/TM5_900.obj",
 							function(object){
 								tm500=object;
+								tm500.rotation.y = 90/180*Math.PI;
+								tm500.scale.set(1.5,1.5,1.5);
 							}
 						)
 					}

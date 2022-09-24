@@ -32,6 +32,10 @@
 
 			//import gltfloader
 			import {GLTFLoader} from './jsm/loaders/GLTFLoader.js'
+			//import objloader
+			import {OBJLoader} from './jsm/loaders/OBJLoader.js'
+			//import mtlloader
+			import {MTLLoader} from './jsm/loaders/MTLLoader.js'
 
 			let container;
 			let camera, scene, renderer;
@@ -85,6 +89,22 @@
 					}
 				)
 
+				//load tm500 obj and mtl file
+				const loader2 = new OBJLoader();
+				const loader3 = new MTLLoader();
+				var tm500;
+				loader3.load("./assets/TM5_900.mtl",
+					function(materials){
+						materials.preload();
+						loader2.setMaterials(materials);
+						loader2.load("./assets/TM5_900.obj",
+							function(object){
+								tm500=object;
+							}
+						)
+					}
+				)
+
 				function onSelect() {
 
 					if ( reticle.visible ) {
@@ -99,6 +119,11 @@
 						reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );
 						scene.add(clone);
 						console.log(clone);
+
+						const clone2 = tm500.clone();
+						reticle.matrix.decompose( clone.position, clone.quaternion, clone.scale );
+						scene.add(clone2);
+						console.log(clone2);
 					}
 				}
 

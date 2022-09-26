@@ -121,7 +121,7 @@
 						// scene.add(clone);
 						// console.log(clone);
 
-						const clone2 = tm500.clone();
+						clone2 = tm500.clone();
 						const clone3 = tm500.clone();
 						reticle.matrix.decompose( clone2.position, clone2.quaternion, clone2.scale );
 						reticle.matrix.decompose( clone3.position, clone3.quaternion, clone3.scale );
@@ -166,7 +166,7 @@
 			function animate() {
 
 				renderer.setAnimationLoop( render );
-				clone2.rotation.x +=0.1;
+				clone2.rotation.x += 0.01;
 
 			}
 

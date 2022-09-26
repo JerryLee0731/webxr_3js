@@ -105,8 +105,6 @@
 						)
 					}
 				)
-				
-				var clone2;
 
 				function onSelect() {
 
@@ -123,12 +121,11 @@
 						// scene.add(clone);
 						// console.log(clone);
 
-						clone2 = tm500.clone();
+						const clone2 = tm500.clone();
 						const clone3 = tm500.clone();
 						reticle.matrix.decompose( clone2.position, clone2.quaternion, clone2.scale );
 						reticle.matrix.decompose( clone3.position, clone3.quaternion, clone3.scale );
 						//scene.add(clone3);
-						clone2.rotation.z= 20/180*Math.PI;
 						clone2.rotation.x = 270/180*Math.PI;
 						clone2.scale.set(1,1,1);
 						scene.add(clone2);

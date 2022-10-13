@@ -71,6 +71,8 @@
 				//
 
 				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+				//新增透明背景
+				renderer.setClearColor(0x000000,0);
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.xr.enabled = true;
@@ -160,6 +162,7 @@
 				reticle.matrixAutoUpdate = false;
 				reticle.visible = false;
 				scene.add( reticle );
+				//scene.backgrond=null;
 
 				//
 

@@ -70,10 +70,11 @@
 
 				//
 
-				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: false } );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.xr.enabled = true;
+				renderer.setClearColor( 0xffffff, 0);
 				container.appendChild( renderer.domElement );
 
 				//
